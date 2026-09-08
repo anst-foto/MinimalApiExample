@@ -38,7 +38,7 @@ public class PersonRepository : IRepository<Person>
         try
         {
             var persons = GetAll().ToList();
-            persons.Add(item);
+            persons.Add(item);//FIXME: Добавить сравнение по id, чтобы не было дублей
             var json = JsonSerializer.Serialize(persons);
             File.WriteAllText(_path, json);
 
