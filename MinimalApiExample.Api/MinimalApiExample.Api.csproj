@@ -8,9 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MinimalApiExample.BusinessLogic\MinimalApiExample.BusinessLogic.csproj" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
-    <!-- Принудительно используем безопасную версию Microsoft.OpenApi -->
-    <PackageReference Include="Microsoft.OpenApi" Version="2.2.0" />
   </ItemGroup>
 
 </Project>
