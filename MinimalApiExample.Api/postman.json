@@ -1,0 +1,134 @@
+{
+  "info": {
+    "name": "MinimalApiExample",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5220",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Persons",
+      "item": [
+        {
+          "name": "Get all persons",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/persons",
+              "host": ["{{baseUrl}}"],
+              "path": ["persons"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get person by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/persons/{{personId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["persons", "{{personId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search persons by name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/persons/search?name={{searchName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["persons", "search"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "{{searchName}}",
+                  "description": "Часть имени (фамилии, имени, отчества)"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create person (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lastName\": \"Иванов\",\n  \"firstName\": \"Иван\",\n  \"patronymic\": \"Иванович\",\n  \"dateOfBirth\": \"1990-01-01T00:00:00\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/persons",
+              "host": ["{{baseUrl}}"],
+              "path": ["persons"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update person (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"{{personId}}\",\n  \"lastName\": \"Петров\",\n  \"firstName\": \"Петр\",\n  \"patronymic\": null,\n  \"dateOfBirth\": \"1985-05-15T00:00:00\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/persons/{{personId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["persons", "{{personId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete person",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/persons/{{personId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["persons", "{{personId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": []
+}
