@@ -1,2 +1,7 @@
 <Solution>
+  <Project Path="MinimalApiExample.Api/MinimalApiExample.Api.csproj" />
+  <Project Path="MinimalApiExample.BusinessLogic.Tests/MinimalApiExample.BusinessLogic.Tests.csproj" />
+  <Project Path="MinimalApiExample.BusinessLogic/MinimalApiExample.BusinessLogic.csproj" />
+  <Project Path="MinimalApiExample.DataAccess.Tests/MinimalApiExample.DataAccess.Tests.csproj" />
+  <Project Path="MinimalApiExample.DataAccess/MinimalApiExample.DataAccess.csproj" />
 </Solution>
